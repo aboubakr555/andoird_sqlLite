@@ -34,6 +34,8 @@
     <Button
         android:id="@+id/backTo"
         android:layout_width="match_parent"
+        android:background="#DF0B53"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="Back"

@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class insert extends AppCompatActivity {
     EditText name,lastname,age;
-    DBHelper DB;
+    DataBaseClass DB;
     Button btninsert;
 
     @Override
@@ -20,7 +20,7 @@ public class insert extends AppCompatActivity {
         name = (EditText)findViewById(R.id.name);
         lastname = (EditText)findViewById(R.id.lastname);
         age = (EditText)findViewById(R.id.age);
-        DB = new DBHelper(this);
+        DB = new DataBaseClass(this);
         btninsert = (Button) findViewById(R.id.save_insert);
         btninsert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +29,7 @@ public class insert extends AppCompatActivity {
                 String lastnametTXT = lastname.getText().toString();
                 String ageTXT = age.getText().toString();
 
-                Boolean checkinsertdata = DB.insertuserdata(nameTXT, lastnametTXT, ageTXT);
+                Boolean checkinsertdata = DB.insertPerson(nameTXT, lastnametTXT, ageTXT);
                 if(checkinsertdata==true)
                     Toast.makeText(insert.this, "Person Inserted", Toast.LENGTH_SHORT).show();
                 else{

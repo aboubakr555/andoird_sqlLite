@@ -9,6 +9,7 @@
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         android:hint="Name"
         android:textSize="24dp"
@@ -32,20 +33,34 @@
         android:inputType="number"/>
     <Button
         android:id="@+id/save_update"
+        android:background="#DF0B53"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24dp"
-        android:text="Save"
+        android:text="update"
         android:layout_marginTop="30dp"
         android:layout_below="@id/age" />
     <Button
+        android:id="@+id/save_delete"
+        android:background="#DF0B53"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="Delete"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/save_update" />
+    <Button
         android:id="@+id/back"
         android:layout_width="match_parent"
+        android:background="#DF0B53"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="Back"
         android:layout_marginTop="30dp"
-        android:layout_below="@id/save_update" />
+        android:layout_below="@id/save_delete" />
 
 
 </RelativeLayout>

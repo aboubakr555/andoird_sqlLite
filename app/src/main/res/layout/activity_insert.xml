@@ -32,6 +32,8 @@
         android:inputType="number"/>
     <Button
         android:id="@+id/save_insert"
+        android:background="#DF0B53"
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24dp"

@@ -2,9 +2,11 @@ package com.example.sqliteapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -17,7 +19,7 @@ public class view extends AppCompatActivity {
     ArrayList<Person> ListP = new ArrayList<Person>();
     Person_Adapter pa;
     Cursor mCursor;
-    DBHelper DB;
+    DataBaseClass DB;
     Button back,filter;
     EditText fltrName;
 
@@ -26,8 +28,9 @@ public class view extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
-        DB = new DBHelper(this);
+        DB = new DataBaseClass(this);
         listview = (ListView) findViewById(R.id.listview);
+        ListP.clear();
 
         mCursor = DB.getdata();
 
@@ -83,6 +86,29 @@ public class view extends AppCompatActivity {
         });
 
 
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+
+                Intent MyIntent1 = new Intent(view.this,update.class);
+                MyIntent1.putExtra("name",ListP.get(i).getName());
+                MyIntent1.putExtra("lastName",ListP.get(i).getLastname());
+                MyIntent1.putExtra("age",ListP.get(i).getAge());
+
+
+                startActivity(MyIntent1);
+                view.this.finish();
+//                pa.notifyDataSetChanged();
+
+
+
+
+
+
+            }
+        });
 
 
     }

@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(MyIntent1);
 
     }
-    public void update(View v){
-        Intent MyIntent1 = new Intent(MainActivity.this,update.class);
-        startActivity(MyIntent1);
-    }
-    public void delete(View v){
-        Intent MyIntent1 = new Intent(MainActivity.this,delete.class);
-        startActivity(MyIntent1);
-    }
+//    public void update(View v){
+//        Intent MyIntent1 = new Intent(MainActivity.this,update.class);
+//        startActivity(MyIntent1);
+//    }
+//    public void delete(View v){
+//        Intent MyIntent1 = new Intent(MainActivity.this,delete.class);
+//        startActivity(MyIntent1);
+//    }
     public void view(View v){
         Intent MyIntent1 = new Intent(MainActivity.this,view.class);
         startActivity(MyIntent1);
