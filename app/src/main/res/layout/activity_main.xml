@@ -22,30 +22,19 @@
         android:text="Add New Person"
         android:layout_marginTop="30dp"
         android:layout_below="@id/texttitle"
-        android:onClick="insert"/>
-    <Button
-        android:id="@+id/btnUpdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:text="Update Person"
-        android:layout_below="@id/btnInsert"
-        android:onClick="update" />
-    <Button
-        android:id="@+id/btnDelete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:text="Delete Person"
-        android:layout_below="@id/btnUpdate"
-        android:onClick="delete"/>
+        android:onClick="insert"
+        android:background="#DF0B53"
+        android:textColor="@color/white"/>
+
     <Button
         android:id="@+id/btnView"
         android:layout_width="match_parent"
+        android:background="#DF0B53"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="View Persons"
-        android:layout_below="@id/btnDelete"
+        android:layout_below="@id/btnInsert"
         android:onClick="view"/>
 
 </RelativeLayout>

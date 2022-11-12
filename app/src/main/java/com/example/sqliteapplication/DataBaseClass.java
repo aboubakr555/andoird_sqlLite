@@ -3,15 +3,11 @@ package com.example.sqliteapplication;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-public class DBHelper extends SQLiteOpenHelper {
-    public DBHelper(Context context) {
+public class DataBaseClass extends SQLiteOpenHelper {
+    public DataBaseClass(Context context) {
         super(context, "Userdata.db", null, 1);
     }
 
@@ -25,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("drop Table if exists Userdetails");
     }
 
-    public Boolean insertuserdata(String name, String contact, String dob) {
+    public Boolean insertPerson(String name, String contact, String dob) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);
@@ -39,7 +35,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean updateuserdata(String name, String contact, String dob) {
+    public Boolean updatePerson(String name, String contact, String dob) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("lastname", contact);
@@ -57,7 +53,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean deletedata(String name) {
+    public Boolean deletePerson(String name) {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select * from Userdetails where name = ?", new String[]{name});
         if (cursor.getCount() > 0) {
